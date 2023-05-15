@@ -36,10 +36,10 @@ public class Gama {
     private String description;
 
     @OneToMany(mappedBy = "gama")
-    //@JsonIgnoreProperties("gama")
+    @JsonIgnoreProperties({"gama"})
     //@JsonBackReference("gama-car")
     //@JsonManagedReference("gama-car")
-    @JsonIgnoreProperties({"gama","car"})
+    //@JsonIgnoreProperties({"gama","car"})
     private List<Car> cars;
 
     public List<Car> getCars() {

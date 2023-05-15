@@ -56,11 +56,11 @@ public class Car {
     //@JsonManagedReference("gama-car")
     private Gama gama;
 
-    @Expose
-    @SerializedName("messages")
+    //@Expose
+    //@SerializedName("messages")
     @OneToMany(mappedBy = "car")
-    @JsonBackReference // Anotación en el lado inverso de la relación
-    @JsonIgnoreProperties("car")
+    //@JsonBackReference // Anotación en el lado inverso de la relación
+    @JsonIgnoreProperties({"car","messages"})
     private List<Message> messages;
 
     public String toJson() {
