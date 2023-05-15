@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
 /**
@@ -39,6 +40,11 @@ public class Reservation {
     private Client client;
     @Column(name = "score")
     private String score;
+    
+    @PrePersist
+    public void prePersist() {
+        this.status = "created";
+    }
 
     public Integer getIdReservation() {
         return idReservation;
