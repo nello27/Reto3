@@ -40,13 +40,14 @@ public class Message {
 
     @ManyToOne
     @JoinColumn(name = "client")
-    @JsonIgnoreProperties("message")
+    @JsonIgnoreProperties({"messages","client"})
     @Expose
     @SerializedName("client")
     private Client client;
 
     @ManyToOne
     @JoinColumn(name = "car") // Nombre de la columna de la clave foránea en la tabla "message"
+    @JsonIgnoreProperties({"messages","car"})
     private Car car;
 
     public String toJson() {

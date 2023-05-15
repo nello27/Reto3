@@ -50,7 +50,8 @@ public class Car {
 
     @ManyToOne
     @JoinColumn(name = "gama") // Nombre de la columna de la clave foránea en la tabla "car"
-    @JsonBackReference("gama-car")
+    //@JsonBackReference("gama-car")
+    @JsonIgnoreProperties({"car","gama"})
     //private Gama gama;
     //@JsonManagedReference("gama-car")
     private Gama gama;

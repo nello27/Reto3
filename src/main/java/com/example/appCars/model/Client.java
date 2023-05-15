@@ -46,8 +46,8 @@ public class Client {
     @Expose
     @SerializedName("messages")
     @OneToMany(mappedBy = "client")
-    @JsonBackReference // Anotación en el lado inverso de la relación
-    @JsonIgnoreProperties("client")
+    //@JsonBackReference // Anotación en el lado inverso de la relación
+    @JsonIgnoreProperties({"client","messages"})
     private List<Message> messages;
 
     @Expose
